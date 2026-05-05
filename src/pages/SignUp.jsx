@@ -52,16 +52,16 @@ function VerifyAddressStep({ onFile }) {
 				<div className="flex flex-col gap-6 mb-8">
 					<div className="flex items-start gap-4">
 						<div className="flex items-center justify-center w-10 h-10 bg-[#23262B] rounded-lg">
-							<svg width="24" height="24" viewBox="0 0 24 24"><rect x="3" y="4" width="18" height="16" rx="2" fill="#5B616E"/><path d="M7 10h4" stroke="#fff" strokeWidth="1.5" strokeLinecap="round"/><circle cx="8.5" cy="8.5" r="1.5" fill="#fff"/><rect x="16" y="7" width="4" height="4" rx="1" fill="#fff"/><path d="M18 9.5l1 1 2-2" stroke="#00A87A" strokeWidth="1.5" strokeLinecap="round"/></svg>
+							<svg width="24" height="24" viewBox="0 0 24 24"><rect x="3" y="4" width="18" height="16" rx="2" fill="#5B616E" /><path d="M7 10h4" stroke="#fff" strokeWidth="1.5" strokeLinecap="round" /><circle cx="8.5" cy="8.5" r="1.5" fill="#fff" /><rect x="16" y="7" width="4" height="4" rx="1" fill="#fff" /><path d="M18 9.5l1 1 2-2" stroke="#00A87A" strokeWidth="1.5" strokeLinecap="round" /></svg>
 						</div>
 						<div>
 							<div className="font-semibold text-white">Prepare your documents</div>
-							<div className="text-[#8A919E] text-sm">Upload a copy of your bank statement, utility bill or credit card statement in your name alone.<br/><a href="#" className="text-[#EA580C] underline">See other valid forms of documents.</a></div>
+							<div className="text-[#8A919E] text-sm">Upload a copy of your bank statement, utility bill or credit card statement in your name alone.<br /><a href="#" className="text-[#EA580C] underline">See other valid forms of documents.</a></div>
 						</div>
 					</div>
 					<div className="flex items-start gap-4">
 						<div className="flex items-center justify-center w-10 h-10 bg-[#23262B] rounded-lg">
-							<svg width="24" height="24" viewBox="0 0 24 24"><rect x="4" y="4" width="16" height="16" rx="2" fill="#5B616E"/><rect x="7" y="7" width="10" height="2" rx="1" fill="#fff"/><rect x="7" y="11" width="10" height="2" rx="1" fill="#fff"/><polygon points="12,18 10,16 14,16" fill="#EA580C"/></svg>
+							<svg width="24" height="24" viewBox="0 0 24 24"><rect x="4" y="4" width="16" height="16" rx="2" fill="#5B616E" /><rect x="7" y="7" width="10" height="2" rx="1" fill="#fff" /><rect x="7" y="11" width="10" height="2" rx="1" fill="#fff" /><polygon points="12,18 10,16 14,16" fill="#EA580C" /></svg>
 						</div>
 						<div>
 							<div className="font-semibold text-white">Upload a document in English</div>
@@ -76,7 +76,7 @@ function VerifyAddressStep({ onFile }) {
 						onClick={() => fileInputRef.current && fileInputRef.current.click()}
 						aria-label="Upload document"
 					>
-						<svg width="24" height="24" viewBox="0 0 24 24"><circle cx="12" cy="12" r="12" fill="#00A87A"/><path d="M12 8v8M8 12h8" stroke="#fff" strokeWidth="2" strokeLinecap="round"/></svg>
+						<svg width="24" height="24" viewBox="0 0 24 24"><circle cx="12" cy="12" r="12" fill="#00A87A" /><path d="M12 8v8M8 12h8" stroke="#fff" strokeWidth="2" strokeLinecap="round" /></svg>
 					</button>
 					<input ref={fileInputRef} type="file" accept="image/png,image/jpeg,application/pdf" className="hidden" onChange={e => { if (e.target.files[0]) onFile(e.target.files[0]); }} />
 					<div className="text-white font-medium mb-2">Upload or drag and drop a copy of your chosen document.</div>
@@ -90,7 +90,7 @@ function VerifyAddressStep({ onFile }) {
 					</button>
 				</div>
 				<div className="bg-[#00113A] rounded-lg p-4 flex items-center gap-3">
-					<svg width="28" height="28" viewBox="0 0 24 24" fill="#EA580C"><rect x="4" y="4" width="16" height="16" rx="4"/><path d="M8 12l2 2 4-4" stroke="#fff" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"/></svg>
+					<svg width="28" height="28" viewBox="0 0 24 24" fill="#EA580C"><rect x="4" y="4" width="16" height="16" rx="4" /><path d="M8 12l2 2 4-4" stroke="#fff" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" /></svg>
 					<div className="text-[#C7D1E0] text-sm">Your document will only be used to verify your address. No other information on the document will be associated with your account.</div>
 				</div>
 			</div>
@@ -234,16 +234,16 @@ const DarkSelect = ({ label, hint, value, onChange, children }) => (
 /* ── Icons ── */
 const GoogleIcon = () => (
 	<svg width="20" height="20" viewBox="0 0 24 24" className="shrink-0">
-		<path d="M22.56 12.25c0-.78-.07-1.53-.2-2.25H12v4.26h5.92c-.26 1.37-1.04 2.53-2.21 3.31v2.77h3.57c2.08-1.92 3.28-4.74 3.28-8.09z" fill="#4285F4"/>
-		<path d="M12 23c2.97 0 5.46-.98 7.28-2.66l-3.57-2.77c-.98.66-2.23 1.06-3.71 1.06-2.86 0-5.29-1.93-6.16-4.53H2.18v2.84C3.99 20.53 7.7 23 12 23z" fill="#34A853"/>
-		<path d="M5.84 14.09c-.22-.66-.35-1.36-.35-2.09s.13-1.43.35-2.09V7.07H2.18C1.43 8.55 1 10.22 1 12s.43 3.45 1.18 4.93l3.66-2.84z" fill="#FBBC05"/>
-		<path d="M12 5.38c1.62 0 3.06.56 4.21 1.64l3.15-3.15C17.45 2.09 14.97 1 12 1 7.7 1 3.99 3.47 2.18 7.07l3.66 2.84c.87-2.6 3.3-4.53 6.16-4.53z" fill="#EA4335"/>
+		<path d="M22.56 12.25c0-.78-.07-1.53-.2-2.25H12v4.26h5.92c-.26 1.37-1.04 2.53-2.21 3.31v2.77h3.57c2.08-1.92 3.28-4.74 3.28-8.09z" fill="#4285F4" />
+		<path d="M12 23c2.97 0 5.46-.98 7.28-2.66l-3.57-2.77c-.98.66-2.23 1.06-3.71 1.06-2.86 0-5.29-1.93-6.16-4.53H2.18v2.84C3.99 20.53 7.7 23 12 23z" fill="#34A853" />
+		<path d="M5.84 14.09c-.22-.66-.35-1.36-.35-2.09s.13-1.43.35-2.09V7.07H2.18C1.43 8.55 1 10.22 1 12s.43 3.45 1.18 4.93l3.66-2.84z" fill="#FBBC05" />
+		<path d="M12 5.38c1.62 0 3.06.56 4.21 1.64l3.15-3.15C17.45 2.09 14.97 1 12 1 7.7 1 3.99 3.47 2.18 7.07l3.66 2.84c.87-2.6 3.3-4.53 6.16-4.53z" fill="#EA4335" />
 	</svg>
 );
 
 const AppleIcon = () => (
 	<svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor" className="shrink-0">
-		<path d="M18.71 19.5c-.83 1.24-1.71 2.45-3.05 2.47-1.34.03-1.77-.79-3.29-.79-1.53 0-2 .77-3.27.82-1.31.05-2.3-1.32-3.14-2.53C4.25 17 2.94 12.45 4.7 9.39c.87-1.52 2.43-2.48 4.12-2.51 1.28-.02 2.5.87 3.29.87.78 0 2.26-1.07 3.8-.91.65.03 2.47.26 3.64 1.98-.09.06-2.17 1.28-2.15 3.81.03 3.02 2.65 4.03 2.68 4.04-.03.07-.42 1.44-1.38 2.83M13 3.5c.73-.83 1.94-1.46 2.94-1.5.13 1.17-.34 2.35-1.04 3.19-.69.85-1.83 1.51-2.95 1.42-.15-1.15.41-2.35 1.05-3.11z"/>
+		<path d="M18.71 19.5c-.83 1.24-1.71 2.45-3.05 2.47-1.34.03-1.77-.79-3.29-.79-1.53 0-2 .77-3.27.82-1.31.05-2.3-1.32-3.14-2.53C4.25 17 2.94 12.45 4.7 9.39c.87-1.52 2.43-2.48 4.12-2.51 1.28-.02 2.5.87 3.29.87.78 0 2.26-1.07 3.8-.91.65.03 2.47.26 3.64 1.98-.09.06-2.17 1.28-2.15 3.81.03 3.02 2.65 4.03 2.68 4.04-.03.07-.42 1.44-1.38 2.83M13 3.5c.73-.83 1.94-1.46 2.94-1.5.13 1.17-.34 2.35-1.04 3.19-.69.85-1.83 1.51-2.95 1.42-.15-1.15.41-2.35 1.05-3.11z" />
 	</svg>
 );
 
@@ -267,13 +267,14 @@ const ChevronRight = () => (
 /* ════════════════════════════════════════════════════
    STEP 0 — Email entry (original sign-up)
    ════════════════════════════════════════════════════ */
-const StepEmail = ({ email, setEmail, onNext }) => (
+const StepEmail = ({ name, setName, email, setEmail, onNext }) => (
 	<Shell>
 		<form onSubmit={(e) => { e.preventDefault(); if (email.trim()) onNext(); }}>
 			<h1 className="text-[1.75rem] font-bold text-white mb-2">Create your account</h1>
 			<p className="text-[0.9375rem] text-[#8A919E] mb-6 leading-6">
 				Access all that Coinbase has to offer with a single account.
 			</p>
+			<DarkInput label="Full Name" type="text" value={name} onChange={(e) => setName(e.target.value)} placeholder="Enter your full name" />
 			<DarkInput label="Email" type="email" value={email} onChange={(e) => setEmail(e.target.value)} placeholder="Your email address" />
 			<BlueBtn type="submit">Continue</BlueBtn>
 
@@ -369,78 +370,27 @@ const StepVerifyEmail = ({ email, onNext }) => {
 /* ════════════════════════════════════════════════════
    STEP 2 — Complete account setup (stepper)
    ════════════════════════════════════════════════════ */
-const StepAccountSetup = ({ onNext }) => {
+const StepAccountSetup = ({ password, setPassword, onNext }) => {
 	const [agreed, setAgreed] = useState(true);
 
 	return (
 		<Shell>
-			{/* Small avatar/icon cluster */}
-			<div className="relative w-14 h-14 mb-4">
-				<div className="w-8 h-8 rounded-full bg-[#F7931A] absolute top-0 left-1" />
-				<svg className="absolute bottom-0 left-0" width="28" height="28" viewBox="0 0 24 24" fill="#5B616E"><polygon points="12 2 2 22 22 22" /></svg>
-				<div className="w-5 h-5 rounded-full bg-[#EA580C] absolute bottom-0 right-2 border-2 border-[#0A0B0D]" />
-			</div>
-
-			<h1 className="text-[1.75rem] font-bold text-white mb-2">Complete account setup</h1>
+			<h1 className="text-[1.75rem] font-bold text-white mb-2">Create a password</h1>
 			<p className="text-[0.9375rem] text-[#8A919E] mb-8 leading-6">
-				<a href="#" className="text-[#EA580C] underline">Regulations</a> requires us to collect and verify your information
+				Choose a secure password to protect your account.
 			</p>
 
-			{/* Stepper */}
-			<div className="flex flex-col gap-0 mb-8">
-				{/* Step 1 — done */}
-				<div className="flex gap-3">
-					<div className="flex flex-col items-center">
-						<div className="w-7 h-7 rounded-full bg-[#00A87A] flex items-center justify-center shrink-0">
-							<svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="white" strokeWidth="3" strokeLinecap="round" strokeLinejoin="round"><polyline points="20 6 9 17 4 12" /></svg>
-						</div>
-						<div className="w-px h-10 bg-[#2C2F36]" />
-					</div>
-					<div className="pb-6">
-						<p className="text-[0.9375rem] text-[#5B616E] font-semibold leading-5">Create your account</p>
-						<p className="text-[0.8125rem] text-[#5B616E] mt-0.5">Add a password and secure your account</p>
-						<p className="text-[0.8125rem] text-[#00A87A] font-medium mt-1">Complete</p>
-					</div>
-				</div>
-
-				{/* Step 2 — active */}
-				<div className="flex gap-3">
-					<div className="flex flex-col items-center">
-						<div className="w-7 h-7 rounded-full border-2 border-[#EA580C] flex items-center justify-center shrink-0">
-							<span className="text-[0.75rem] font-bold text-[#EA580C]">2</span>
-						</div>
-						<div className="w-px h-10 bg-[#2C2F36]" />
-					</div>
-					<div className="pb-6">
-						<p className="text-[0.9375rem] text-white font-semibold leading-5">About you</p>
-						<p className="text-[0.8125rem] text-[#8A919E] mt-0.5">Add your personal information</p>
-						<p className="text-[0.8125rem] text-[#F7931A] font-medium mt-1 flex items-center gap-1">
-							<svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.5"><circle cx="12" cy="12" r="10" /><polyline points="12 6 12 12 16 14" /></svg>
-							Approx. 2 min
-						</p>
-					</div>
-				</div>
-
-				{/* Step 3 — pending */}
-				<div className="flex gap-3">
-					<div className="flex flex-col items-center">
-						<div className="w-7 h-7 rounded-full border border-[#2C2F36] flex items-center justify-center shrink-0">
-							<span className="text-[0.75rem] font-semibold text-[#5B616E]">3</span>
-						</div>
-					</div>
-					<div>
-						<p className="text-[0.9375rem] text-[#5B616E] font-semibold leading-5">Verify your identity</p>
-						<p className="text-[0.8125rem] text-[#5B616E] mt-0.5">Upload and verify your identity documents</p>
-						<p className="text-[0.8125rem] text-[#F7931A] font-medium mt-1 flex items-center gap-1">
-							<svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.5"><circle cx="12" cy="12" r="10" /><polyline points="12 6 12 12 16 14" /></svg>
-							Approx. 5 min
-						</p>
-					</div>
-				</div>
-			</div>
+			<DarkInput
+				label="Password"
+				type="password"
+				value={password}
+				onChange={(e) => setPassword(e.target.value)}
+				placeholder="Enter a strong password"
+				hint="Minimum 8 characters with at least one number and one symbol."
+			/>
 
 			{/* Checkbox */}
-			<label className="flex items-start gap-3 mb-6 cursor-pointer">
+			<label className="flex items-start gap-3 mb-8 cursor-pointer">
 				<input type="checkbox" checked={agreed} onChange={(e) => setAgreed(e.target.checked)}
 					className="mt-1 w-5 h-5 rounded border-[#2C2F36] bg-[#1E2025] accent-[#EA580C] cursor-pointer" />
 				<span className="text-[0.8125rem] text-[#8A919E] leading-5">
@@ -449,13 +399,9 @@ const StepAccountSetup = ({ onNext }) => {
 				</span>
 			</label>
 
-			<button
-				className="w-full max-w-xs py-3 rounded-full font-semibold text-lg bg-[#EA580C] hover:bg-[#C2410C] text-white transition"
-				onClick={onNext}
-				disabled={!agreed}
-			>
-				Submit
-			</button>
+			<BlueBtn onClick={onNext} disabled={!agreed || password.length < 8}>
+				Continue
+			</BlueBtn>
 		</Shell>
 	);
 };
@@ -691,20 +637,51 @@ const StepVerifying = () => (
    ════════════════════════════════════════════════════ */
 const SignUp = () => {
 	const [step, setStep] = useState(0);
+	const [name, setName] = useState('');
 	const [email, setEmail] = useState('');
+	const [password, setPassword] = useState('');
 	const [citizenship, setCitizenship] = useState('GH');
 	const [residence, setResidence] = useState('GH');
 	const [birthCity, setBirthCity] = useState('');
 	const [birthCountry, setBirthCountry] = useState('GH');
 	const [addressFile, setAddressFile] = useState(null);
 
+	const navigate = useNavigate();
 	const next = () => setStep((s) => s + 1);
 	const back = () => setStep((s) => Math.max(0, s - 1));
 
+	useEffect(() => {
+		if (step === 8) {
+			// Actually perform the registration
+			const apiUrl = import.meta.env.VITE_API_URL || 'http://localhost:5000';
+			const registerUser = async () => {
+				try {
+					const response = await fetch(`${apiUrl}/register`, {
+						method: 'POST',
+						headers: { 'Content-Type': 'application/json' },
+						body: JSON.stringify({ name, email, password }),
+					});
+					const data = await response.json();
+					if (data.success) {
+						setTimeout(() => setStep(9), 2000); // Wait 2s to show "verifying" animation
+					} else {
+						alert(data.message || 'Registration failed');
+						setStep(0);
+					}
+				} catch (error) {
+					console.error('Registration error:', error);
+					alert('An error occurred during registration.');
+					setStep(0);
+				}
+			};
+			registerUser();
+		}
+	}, [step, name, email, password]);
+
 	switch (step) {
-		case 0: return <StepEmail email={email} setEmail={setEmail} onNext={next} />;
+		case 0: return <StepEmail name={name} setName={setName} email={email} setEmail={setEmail} onNext={next} />;
 		case 1: return <StepVerifyEmail email={email} onNext={next} />;
-		case 2: return <StepAccountSetup onNext={next} />;
+		case 2: return <StepAccountSetup password={password} setPassword={setPassword} onNext={next} />;
 		case 3: return <StepEmailOptIn onNext={next} />;
 		case 4: return <StepCountry citizenship={citizenship} setCitizenship={setCitizenship} residence={residence} setResidence={setResidence} onNext={next} />;
 		case 5: return <StepBirth city={birthCity} setCity={setBirthCity} country={birthCountry} setCountry={setBirthCountry} onNext={next} />;

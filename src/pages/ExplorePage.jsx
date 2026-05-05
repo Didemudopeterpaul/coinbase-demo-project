@@ -416,54 +416,39 @@ const ExplorePage = () => {
 		})();
 	}, []);
 
-	/* ── Fetch from Binance (same as CryptoTable) ── */
+	/* ── Fetch from Backend ── */
 	const fetchPrices = useCallback(async () => {
+		const apiUrl = import.meta.env.VITE_API_URL || 'http://localhost:5000';
 		try {
-			const res = await fetch(`https://api.binance.com/api/v3/ticker/24hr?symbols=${BINANCE_SYMBOLS}`);
-			if (!res.ok) throw new Error(`Binance ${res.status}`);
-			return await res.json();
+			const res = await fetch(`${apiUrl}/crypto`);
+			if (!res.ok) throw new Error(`Backend ${res.status}`);
+			const json = await res.json();
+			return json.data; // Backend returns { success: true, data: [...] }
 		} catch (error) {
-			console.warn('Binance fetch failed, using fallback data:', error);
-			// Fallback mock data structure derived from COIN_META
-			return COIN_META.map((meta, i) => {
-				// Deterministic mock values based on index to look realistic
-				const basePrice = [67200, 3500, 590, 145, 0.5, 0.45, 0.16][i % 7];
-				const lastPrice = (basePrice * (1 + (Math.sin(i) * 0.05))).toFixed(4);
-				const priceChangePercent = (Math.sin(i * 1.5) * 5).toFixed(2);
-				return {
-					symbol: meta.binance,
-					lastPrice,
-					priceChangePercent,
-					quoteVolume: (Math.abs(Math.cos(i)) * 1000000000 + 100000000).toFixed(2),
-				};
-			});
+			console.warn('Backend fetch failed, using fallback data:', error);
+			// Fallback mock data
+			return COIN_META.map((meta, i) => ({
+				name: meta.name,
+				symbol: meta.symbol,
+				price: [67200, 3500, 590][i % 3],
+				image: getCoinIcon(meta.symbol),
+				change24h: (Math.sin(i) * 5).toFixed(2),
+			}));
 		}
 	}, []);
 
-	const buildCoins = useCallback((tickers) => {
+	const buildCoins = useCallback((data) => {
 		const rate = getRate();
-		return tickers
-			.map((t) => {
-				const meta = COIN_META_MAP[t.symbol];
-				if (!meta) return null;
-				const priceUsd = parseFloat(t.lastPrice);
-				const price = priceUsd * rate;
-				const change24h = parseFloat(t.priceChangePercent);
-				const volumeUsd = parseFloat(t.quoteVolume);
-				const mktCap = priceUsd * (meta.supply || 1) * rate;
-				return {
-					id: t.symbol,
-					name: meta.name,
-					symbol: meta.symbol,
-					image: getCoinIcon(meta.symbol),
-					current_price: price,
-					price_change_percentage_24h: change24h,
-					market_cap: mktCap,
-					total_volume: volumeUsd * rate,
-				};
-			})
-			.filter(Boolean)
-			.sort((a, b) => b.market_cap - a.market_cap);
+		return data.map((c) => ({
+			id: c._id || c.symbol,
+			name: c.name,
+			symbol: c.symbol,
+			image: c.image || getCoinIcon(c.symbol),
+			current_price: c.price * rate,
+			price_change_percentage_24h: parseFloat(c.change24h),
+			market_cap: (c.price * rate) * 1000000, // Mock cap for now
+			total_volume: (c.price * rate) * 5000, // Mock volume for now
+		}));
 	}, [getRate]);
 
 	/* ── Initial load + polling ── */
