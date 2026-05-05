@@ -1,3 +1,6 @@
+import { useState, useEffect } from 'react';
+import { useNavigate, Link } from 'react-router-dom';
+
 // Step 12: Verifying Address
 function VerifyingAddressStep() {
 	return (
