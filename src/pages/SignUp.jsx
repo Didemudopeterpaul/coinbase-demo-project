@@ -1,6 +1,12 @@
-import { useState } from 'react';
+import { useState, useEffect, useRef, useCallback } from 'react';
 import { Link, useNavigate } from 'react-router-dom';
 import Logo from '../components/ui/Logo';
+import { Shell, DarkInput, BlueBtn, DarkBtn } from './signup-steps/SignupUI';
+import AllSetStep from './signup-steps/AllSetStep';
+import VerifyAddressStep from './signup-steps/VerifyAddressStep';
+import PreviewAddressStep from './signup-steps/PreviewAddressStep';
+import VerifyingAddressStep from './signup-steps/VerifyingAddressStep';
+import AddressFailStep from './signup-steps/AddressFailStep';
 
 /* ── Reusable dark select ── */
 const DarkSelect = ({ label, hint, value, onChange, children }) => (

@@ -439,7 +439,7 @@ const ExplorePage = () => {
 
 	const buildCoins = useCallback((data) => {
 		const rate = getRate();
-		return data.map((c) => ({
+		return (data || []).map((c) => ({
 			id: c._id || c.symbol,
 			name: c.name,
 			symbol: c.symbol,
